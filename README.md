@@ -6,17 +6,19 @@
 
 To run the application you need to have Node JS installed.
 
-1. Create .env 
-`````
-// give your mongodb url for database access
-``````
-//PORT Number
-
-2. Install all node-modules
+1. Install all node-modules
 
 ```
 npm i
 ```
+
+2. Create .env file
+`````
+1. DB_URI = 'provide your mongo uri'
+``````
+//PORT = 5000
+
+CLIENT_URL = http://localhost:3000
 
 3. run the backend Server
 

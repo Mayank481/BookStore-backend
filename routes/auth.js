@@ -1,3 +1,4 @@
+require("dotenv").config();
 const router = require("express").Router();
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -43,7 +44,7 @@ router.get("/login/success", (req, res) => {
 router.get("/logout", (req, res) => {
   req.session = null;
   userdata = null;
-  res.redirect("http://localhost:3000/");
+  res.redirect(process.env.CLIENT_URL);
 });
 
 module.exports = router;
