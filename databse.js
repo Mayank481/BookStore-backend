@@ -1,14 +1,13 @@
-require('dotenv').config();
+require("dotenv").config();
 const mongooes = require("mongoose");
-
 
 const connectDatabase = () => {
   mongooes
     .connect(process.env.DB_URI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     })
-    .then((data) => {
+    .then(() => {
       console.log(`Database Connected`);
     })
     .catch((err) => {
