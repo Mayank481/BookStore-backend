@@ -20,8 +20,7 @@ module.exports.singlebookrecord = async (req, res) => {
   res.send(data);
 };
 
-module.exports.deletebook = async (req, res) => {
-  // console.log(req.body);
+module.exports.deletebook = async (req, res) => {  
   const data = await book.deleterecord(req.body);
   res.send(data);
 }
