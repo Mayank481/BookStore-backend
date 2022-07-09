@@ -6,5 +6,6 @@ router.post("/publishbook", book.publishbook);
 router.post("/approve", book.approvebook);
 router.post("/singlebookrecord", book.singlebookrecord);
 router.post("/privacy", book.privacy);
+router.post("/deletebook",book.deletebook)
 
 module.exports = router;

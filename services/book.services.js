@@ -37,8 +37,19 @@ module.exports.getrecord = async (bookdata) => {
   try {
     const data = await bookmodel.find({ Author: userid });
     return data;
-  } catch (error) {}
+  } catch (error) {
+    return error;
+  }
 };
+
+module.exports.deleterecord = async (bookdata) => {  
+  const userid = mongoose.Types.ObjectId(bookdata.Author);
+  try {
+    const data = await bookmodel.deleteOne({Author: userid,Title: bookdata.Title,ISBN : bookdata.ISBN})
+  } catch (error) {
+    return error;
+  }
+}
 
 module.exports.getprivacy = async (bookdata) => {
   const userid = mongoose.Types.ObjectId(bookdata.data);

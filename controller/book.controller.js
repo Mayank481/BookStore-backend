@@ -20,6 +20,12 @@ module.exports.singlebookrecord = async (req, res) => {
   res.send(data);
 };
 
+module.exports.deletebook = async (req, res) => {
+  // console.log(req.body);
+  const data = await book.deleterecord(req.body);
+  res.send(data);
+}
+
 module.exports.privacy = async (req, res) => {
   const data = await book.getprivacy(req.body);
   res.send(data);
