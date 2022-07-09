@@ -2,10 +2,10 @@ const mongooes = require("mongoose");
 const { Schema } = require("mongoose");
 
 const userschema = new mongooes.Schema({
-  FirstName: String,
-  LastName: String,
+  FullName: String,
+  Age: String,
   Email: String,
   Password: String,
-  PhoneNumber: String,
+  DateOfBirth: String,
 });
 module.exports = mongooes.model("book-store", userschema);

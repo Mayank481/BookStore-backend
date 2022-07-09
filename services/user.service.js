@@ -3,11 +3,11 @@ const userdata = require("../model/user.model");
 
 module.exports.alluser = (data) => {
   const info = {
-    FirstName: data.userFirstName,
-    LastName: data.userLastName,
+    FullName: data.userFullName,
+    Age: data.userAge,
     Email: data.userEmail,
     Password: data.userPassword,
-    PhoneNumber: data.userPhoneNumber,
+    DateOfBirth: data.userDateOfBirth,
   };
   try {
     userdata(info).save();

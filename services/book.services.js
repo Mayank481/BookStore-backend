@@ -13,8 +13,8 @@ module.exports.postbook = (bookdata) => {
   const userid = mongoose.Types.ObjectId(bookdata.userid);
   const bookinfo = {
     Title: bookdata.info.booktittle,
-    ISBN: bookdata.info.isbn,
-    Pages: bookdata.info.nop,
+    PRICE: bookdata.info.PRICE,
+    PUBLISHEDON: bookdata.info.nop,
     Author: userid,
     Status: "Pending",
     View: "Public",
@@ -45,7 +45,7 @@ module.exports.getrecord = async (bookdata) => {
 module.exports.deleterecord = async (bookdata) => {  
   const userid = mongoose.Types.ObjectId(bookdata.Author);
   try {
-    const data = await bookmodel.deleteOne({Author: userid,Title: bookdata.Title,ISBN : bookdata.ISBN})
+    const data = await bookmodel.deleteOne({Author: userid,Title: bookdata.Title,PRICE : bookdata.PRICE})
   } catch (error) {
     return error;
   }
